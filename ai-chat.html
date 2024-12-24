@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>聪明的小堇 - AI助手</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/ai-chat.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <div class="nav-brand">小堇的个人网站</div>
+    <div class="nav-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="about.html">关于我</a></li>
+      <li><a href="skills.html">技能</a></li>
+      <li><a href="projects.html">项目</a></li>
+      <li><a href="blog.html">博客</a></li>
+      <li><a href="ai-chat.html" class="active">聪明的小堇</a></li>
+      <li><a href="contact.html">联系我</a></li>
+    </ul>
+  </nav>
+
+  <!-- 聊天界面 -->
+  <main class="chat-container">
+    <div class="chat-header">
+      <h1>聪明的小堇</h1>
+      <p>基于GLM-4的智能助手</p>
+    </div>
+
+    <div class="chat-box">
+      <div class="chat-toolbar">
+        <button id="newChatBtn" class="toolbar-btn">
+          <i class="fas fa-plus"></i> 新对话
+        </button>
+      </div>
+
+      <div class="chat-messages" id="chatMessages">
+        <!-- 消息将在这里动态添加 -->
+        <div class="message assistant">
+          <div class="message-content">
+            你好！我是小堇，很高兴为你服务。请问有什么我可以帮你的吗？
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-input">
+        <textarea id="userInput" placeholder="输入你的问题..." rows="1"></textarea>
+        <button id="sendButton">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>关于小堇</h3>
+          <p>一个热爱技术、追求创新的全栈开发者。致力于创造优秀的用户体验和解决方案。</p>
+          <div class="footer-social">
+            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-weixin"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>快速链接</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="about.html">关于我</a></li>
+            <li><a href="skills.html">技能</a></li>
+            <li><a href="projects.html">项目</a></li>
+            <li><a href="blog.html">博客</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>联系方式</h3>
+          <ul class="footer-contact">
+            <li><i class="fas fa-envelope"></i> email@example.com</li>
+            <li><i class="fas fa-phone"></i> +86 123 4567 8900</li>
+            <li><i class="fas fa-map-marker-alt"></i> 中国，北京</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 小堇的个人网站. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/ai-chat.js"></script>
+</body>
+
+</html>

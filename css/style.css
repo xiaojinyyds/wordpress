@@ -26,7 +26,7 @@ body {
     padding: 0 2rem;
 }
 
-/* 导航栏样式 */
+/* 导航栏基础样式 */
 .navbar {
     position: fixed;
     top: 0;
@@ -48,7 +48,7 @@ body {
 }
 
 .nav-toggle {
-    display: none;
+    display: none; /* 默认隐藏 */
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--primary-color);
@@ -57,6 +57,7 @@ body {
     padding: 0.5rem;
     transition: var(--transition);
     border-radius: 8px;
+    z-index: 1001; /* 确保按钮在最上层 */
 }
 
 .nav-toggle:hover {
@@ -157,25 +158,88 @@ body {
 
 /* 响应式设计 */
 @media (max-width: 768px) {
+    .navbar {
+        padding: 0.8rem 1rem;
+    }
+
     .nav-toggle {
         display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        background: var(--light-color);
+        position: relative; /* 添加定位 */
     }
 
     .nav-menu {
-        position: fixed !important;
-        top: 60px !important;
-        left: 0 !important;
-        width: 100% !important;
-        background: white !important;
-        padding: 1rem !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 0.5rem !important;
-        transform: translateY(-150%) !important;
-        opacity: 0 !important;
-        visibility: hidden !important;
-        transition: all 0.3s ease !important;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: auto;
+        max-height: calc(100vh - 60px);
+        overflow-y: auto;
+        background: white;
+        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000; /* 确保菜单在适当层级 */
+    }
+
+    .nav-menu.active {
+        transform: translateY(0) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    .nav-menu li {
+        width: 100%;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 1rem;
+        text-align: center;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+        background: var(--light-color);
+        color: var(--primary-color);
+    }
+
+    /* 防止页面滚动 */
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    /* 添加背景遮罩 */
+    .nav-backdrop {
+        display: none;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .nav-backdrop.active {
+        display: block;
+        opacity: 1;
     }
 }
 

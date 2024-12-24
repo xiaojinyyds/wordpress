@@ -1,84 +1,59 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // 导航栏处理
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
     const navbar = document.querySelector('.navbar');
 
-    // 详细的调试信息
-    console.log('=== 导航栏调试信息 ===');
-    console.log('导航按钮状态:', {
-        element: navToggle,
-        exists: !!navToggle,
-        display: navToggle ? getComputedStyle(navToggle).display : 'not found'
-    });
-    console.log('导航菜单状态:', {
-        element: navMenu,
-        exists: !!navMenu,
-        visibility: navMenu ? getComputedStyle(navMenu).visibility : 'not found',
-        transform: navMenu ? getComputedStyle(navMenu).transform : 'not found'
+    // 添加调试日志
+    console.log('导航元素:', {
+        toggle: navToggle,
+        menu: navMenu,
+        navbar: navbar
     });
 
-    if (!navToggle || !navMenu) {
-        console.error('导航栏元素未找到！');
-        return;
-    }
-
-    // 设置当前页面的活动状态
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelector(`.nav-menu a[href="${currentPage}"]`)?.classList.add('active');
+    // 创建背景遮罩
+    const backdrop = document.createElement('div');
+    backdrop.className = 'nav-backdrop';
+    document.body.appendChild(backdrop);
 
     // 切换菜单
-    navToggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        console.log('导航按钮被点击');
-        console.log('点击前菜单状态:', {
-            classList: Array.from(navMenu.classList),
-            visibility: getComputedStyle(navMenu).visibility,
-            transform: getComputedStyle(navMenu).transform
-        });
-
-        navMenu.classList.toggle('active');
-        navToggle.classList.toggle('active');
+    function toggleMenu(show) {
+        console.log('切换菜单:', show); // 调试日志
+        navMenu.classList.toggle('active', show);
+        navToggle.classList.toggle('active', show);
+        backdrop.classList.toggle('active', show);
+        document.body.classList.toggle('menu-open', show);
         
-        console.log('点击后菜单状态:', {
-            classList: Array.from(navMenu.classList),
-            visibility: getComputedStyle(navMenu).visibility,
-            transform: getComputedStyle(navMenu).transform
-        });
-
-        // 切换图标
         const icon = navToggle.querySelector('i');
-        if (navMenu.classList.contains('active')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
+        if (show) {
+            icon.classList.replace('fa-bars', 'fa-times');
             navMenu.style.animation = 'slideIn 0.3s forwards';
         } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
+            icon.classList.replace('fa-times', 'fa-bars');
             navMenu.style.animation = 'slideOut 0.3s forwards';
         }
+    }
+
+    // 点击切换按钮
+    navToggle.addEventListener('click', (e) => {
+        console.log('按钮被点击'); // 调试日志
+        e.stopPropagation();
+        const isOpen = navMenu.classList.contains('active');
+        toggleMenu(!isOpen);
     });
 
-    // 点击菜单项时关闭菜单
+    // 点击菜单项
     navMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
-            navToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
-            navMenu.style.animation = 'slideOut 0.3s forwards';
+            toggleMenu(false);
         });
     });
 
-    // 点击页面其他地方关闭菜单
-    document.addEventListener('click', (e) => {
-        if (!navbar.contains(e.target)) {
-            navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
-            navToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
-        }
+    // 点击背景遮罩关闭菜单
+    backdrop.addEventListener('click', () => {
+        toggleMenu(false);
     });
 
-    // 滚动时自动隐藏/显示导航栏
+    // 处理滚动
     let lastScrollTop = 0;
     let isScrolling = false;
 
@@ -89,8 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 if (scrollTop > lastScrollTop && scrollTop > 100) {
                     navbar.style.transform = 'translateY(-100%)';
-                    navMenu.classList.remove('active');
-                    navToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+                    toggleMenu(false);
                 } else {
                     navbar.style.transform = 'translateY(0)';
                 }
@@ -100,5 +74,16 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             isScrolling = true;
         }
+    });
+
+    // 处理窗口大小改变
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+                toggleMenu(false);
+            }
+        }, 250);
     });
 }); 
