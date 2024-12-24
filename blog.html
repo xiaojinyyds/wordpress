@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>博客 - 小堇的个人网站</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/blog.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <div class="nav-brand">小堇的个人网站</div>
+    <div class="nav-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="about.html">关于我</a></li>
+      <li><a href="skills.html">技能</a></li>
+      <li><a href="projects.html">项目</a></li>
+      <li><a href="blog.html" class="active">博客</a></li>
+      <li><a href="contact.html">联系我</a></li>
+    </ul>
+  </nav>
+
+  <!-- 博客头部 -->
+  <header class="blog-header">
+    <div class="header-content">
+      <h1 data-aos="fade-up">技术博客</h1>
+      <p class="subtitle" data-aos="fade-up" data-aos-delay="100">分享我的技术见解和学习心得</p>
+      <div class="search-bar" data-aos="fade-up" data-aos-delay="200">
+        <input type="text" placeholder="搜索文章...">
+        <button><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="blog-content">
+    <div class="container">
+      <div class="content-wrapper">
+        <!-- 文章列表部分 -->
+        <div class="articles-section">
+          <!-- 特色文章 -->
+          <article class="featured-article" data-aos="fade-up">
+            <div class="article-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <div class="article-content">
+              <div class="article-meta">
+                <span><i class="far fa-calendar"></i> 2024-03-15</span>
+                <span><i class="far fa-folder"></i> 前端开发</span>
+                <span><i class="far fa-eye"></i> 1580</span>
+              </div>
+              <h2>深入理解React Hooks的原理与实践</h2>
+              <p>探索React Hooks的工作原理，以及如何在实际项目中最佳地运用它们来提升组件的可复用性和代码质量...</p>
+              <a href="#" class="read-more">阅读全文 <i class="fas fa-arrow-right"></i></a>
+              <div class="article-tags">
+                <span>#React</span>
+                <span>#Hooks</span>
+                <span>#前端开发</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 普通文章列表 -->
+          <div class="articles-grid">
+            <!-- 文章1 -->
+            <article class="article-card" data-aos="fade-up">
+              <div class="article-icon">
+                <i class="fas fa-database"></i>
+              </div>
+              <div class="article-meta">
+                <span><i class="far fa-calendar"></i> 2024-03-10</span>
+                <span><i class="far fa-folder"></i> 后端开发</span>
+              </div>
+              <h3>MongoDB性能优化实战指南</h3>
+              <p>分享在处理大规模数据时的MongoDB优化经验，包括索引策略、查询优化和服务器配置等关键点...</p>
+              <a href="#" class="read-more">阅读全文 <i class="fas fa-arrow-right"></i></a>
+              <div class="article-tags">
+                <span>#MongoDB</span>
+                <span>#性能优化</span>
+              </div>
+            </article>
+
+            <!-- 文章2 -->
+            <article class="article-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="article-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <div class="article-meta">
+                <span><i class="far fa-calendar"></i> 2024-03-05</span>
+                <span><i class="far fa-folder"></i> 移动开发</span>
+              </div>
+              <h3>Flutter状态管理最佳实践</h3>
+              <p>对比Flutter各种状态管理方案的优劣，并结合实际项目经验，推荐最适合的状态管理方案...</p>
+              <a href="#" class="read-more">阅读全文 <i class="fas fa-arrow-right"></i></a>
+              <div class="article-tags">
+                <span>#Flutter</span>
+                <span>#状态管理</span>
+              </div>
+            </article>
+
+            <!-- 文章3 -->
+            <article class="article-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="article-icon">
+                <i class="fas fa-cloud"></i>
+              </div>
+              <div class="article-meta">
+                <span><i class="far fa-calendar"></i> 2024-02-28</span>
+                <span><i class="far fa-folder"></i> 云服务</span>
+              </div>
+              <h3>Docker容器化部署实践</h3>
+              <p>详解如何使用Docker构建高可用的微服务架构，包括容器编排、服务发现和负载均衡等核心概念...</p>
+              <a href="#" class="read-more">阅读全文 <i class="fas fa-arrow-right"></i></a>
+              <div class="article-tags">
+                <span>#Docker</span>
+                <span>#微服务</span>
+              </div>
+            </article>
+
+            <!-- 文章4 -->
+            <article class="article-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="article-icon">
+                <i class="fas fa-code-branch"></i>
+              </div>
+              <div class="article-meta">
+                <span><i class="far fa-calendar"></i> 2024-02-20</span>
+                <span><i class="far fa-folder"></i> 开发工具</span>
+              </div>
+              <h3>Git工作流最佳实践</h3>
+              <p>探讨团队协作中的Git分支策略、代码审查流程，以及如何处理合并冲突等实际问题...</p>
+              <a href="#" class="read-more">阅读全文 <i class="fas fa-arrow-right"></i></a>
+              <div class="article-tags">
+                <span>#Git</span>
+                <span>#团队协作</span>
+                <span>#版本控制</span>
+              </div>
+            </article>
+
+            <!-- 文章5 -->
+            <article class="article-card" data-aos="fade-up" data-aos-delay="400">
+              <div class="article-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="article-meta">
+                <span><i class="far fa-calendar"></i> 2024-02-15</span>
+                <span><i class="far fa-folder"></i> 网络安全</span>
+              </div>
+              <h3>Web应用安全防护指南</h3>
+              <p>详细介绍常见的Web安全漏洞，包括XSS、CSRF、SQL注入等，并提供相应的防护措施和最佳实践...</p>
+              <a href="#" class="read-more">阅读全文 <i class="fas fa-arrow-right"></i></a>
+              <div class="article-tags">
+                <span>#安全</span>
+                <span>#Web</span>
+                <span>#最佳实践</span>
+              </div>
+            </article>
+
+            <!-- 文章6 -->
+            <article class="article-card" data-aos="fade-up" data-aos-delay="500">
+              <div class="article-icon">
+                <i class="fas fa-tachometer-alt"></i>
+              </div>
+              <div class="article-meta">
+                <span><i class="far fa-calendar"></i> 2024-02-10</span>
+                <span><i class="far fa-folder"></i> 性能优化</span>
+              </div>
+              <h3>前端性能优化实战指南</h3>
+              <p>从加载速度、运行时性能、用户体验等多个维度，探讨前端应用的性能优化策略和实践方法...</p>
+              <a href="#" class="read-more">阅读全文 <i class="fas fa-arrow-right"></i></a>
+              <div class="article-tags">
+                <span>#性能优化</span>
+                <span>#前端</span>
+                <span>#用户体验</span>
+              </div>
+            </article>
+          </div>
+
+          <!-- 分页 -->
+          <div class="pagination" data-aos="fade-up">
+            <a href="#" class="page-btn active">1</a>
+            <a href="#" class="page-btn">2</a>
+            <a href="#" class="page-btn">3</a>
+            <span class="page-dots">...</span>
+            <a href="#" class="page-btn">10</a>
+            <a href="#" class="page-btn next">
+              <i class="fas fa-angle-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 侧边栏 -->
+        <aside class="blog-sidebar">
+          <!-- 分类 -->
+          <div class="sidebar-widget categories" data-aos="fade-left">
+            <h3>文章分类</h3>
+            <ul>
+              <li>
+                <a href="#">前端开发 <span>15</span></a>
+              </li>
+              <li>
+                <a href="#">后端开发 <span>12</span></a>
+              </li>
+              <li>
+                <a href="#">移动开发 <span>8</span></a>
+              </li>
+              <li>
+                <a href="#">云服务 <span>6</span></a>
+              </li>
+              <li>
+                <a href="#">UI设计 <span>4</span></a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 标签云 -->
+          <div class="sidebar-widget tags" data-aos="fade-left">
+            <h3>热门标签</h3>
+            <div class="tag-cloud">
+              <a href="#" class="tag-item">React</a>
+              <a href="#" class="tag-item">Vue</a>
+              <a href="#" class="tag-item">Node.js</a>
+              <a href="#" class="tag-item">Flutter</a>
+              <a href="#" class="tag-item">Docker</a>
+              <a href="#" class="tag-item">MongoDB</a>
+              <a href="#" class="tag-item">微服务</a>
+              <a href="#" class="tag-item">性能优化</a>
+            </div>
+          </div>
+
+          <!-- 热门文章 -->
+          <div class="sidebar-widget popular-posts" data-aos="fade-left">
+            <h3>热门文章</h3>
+            <div class="popular-post-item">
+              <div class="post-icon">
+                <i class="fas fa-fire"></i>
+              </div>
+              <div class="post-info">
+                <h4>Vue3组合式API最佳实践</h4>
+                <span><i class="far fa-eye"></i> 2,345 阅读</span>
+              </div>
+            </div>
+            <div class="popular-post-item">
+              <div class="post-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <div class="post-info">
+                <h4>TypeScript高级类型实战</h4>
+                <span><i class="far fa-eye"></i> 1,892 阅读</span>
+              </div>
+            </div>
+            <div class="popular-post-item">
+              <div class="post-icon">
+                <i class="fas fa-layer-group"></i>
+              </div>
+              <div class="post-info">
+                <h4>微服务架构设计模式</h4>
+                <span><i class="far fa-eye"></i> 1,654 阅读</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>关于小堇</h3>
+          <p>一个热爱技术、追求创新的全栈开发者。致力于创造优秀的用户体验和解决方案。</p>
+          <div class="footer-social">
+            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-weixin"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>快速链接</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="about.html">关于我</a></li>
+            <li><a href="skills.html">技能</a></li>
+            <li><a href="projects.html">项目</a></li>
+            <li><a href="blog.html">博客</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>联系方式</h3>
+          <ul class="footer-contact">
+            <li><i class="fas fa-envelope"></i> email@example.com</li>
+            <li><i class="fas fa-phone"></i> +86 123 4567 8900</li>
+            <li><i class="fas fa-map-marker-alt"></i> 中国，北京</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 小堇的个人网站. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/blog.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>联系我 - 小堇的个人网站</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <div class="nav-brand">小堇的个人网站</div>
+    <div class="nav-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="about.html">关于我</a></li>
+      <li><a href="skills.html">技能</a></li>
+      <li><a href="projects.html">项目</a></li>
+      <li><a href="blog.html">博客</a></li>
+      <li><a href="contact.html" class="active">联系我</a></li>
+    </ul>
+  </nav>
+
+  <!-- 联系页面主体 -->
+  <main class="contact-main">
+    <div class="container">
+      <div class="contact-wrapper">
+        <!-- 左侧联系信息 -->
+        <div class="contact-info" data-aos="fade-right">
+          <h1>让我们开始对话</h1>
+          <p class="subtitle">无论是项目合作还是技术交流，我都很期待与您联系</p>
+
+          <div class="info-items">
+            <div class="info-item">
+              <div class="info-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="info-content">
+                <h3>地址</h3>
+                <p>中国，北京市</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="info-content">
+                <h3>邮箱</h3>
+                <p>email@example.com</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="info-content">
+                <h3>电话</h3>
+                <p>+86 123 4567 8900</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+          </div>
+        </div>
+
+        <!-- 右侧联系表单 -->
+        <div class="contact-form" data-aos="fade-left">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">姓名</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">邮箱</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">主题</label>
+              <input type="text" id="subject" name="subject" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message">消息</label>
+              <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">
+              发送消息
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- 常见问题部分 -->
+      <div class="faq-section" data-aos="fade-up">
+        <h2>常见问题</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3><i class="fas fa-question-circle"></i> 如何开始项目合作？</h3>
+            <p>您可以通过上方的联系表单或直接发送邮件给我，描述您的项目需求，我会在24小时内回复您。</p>
+          </div>
+          <div class="faq-item">
+            <h3><i class="fas fa-question-circle"></i> 接受远程工作吗？</h3>
+            <p>是的，我可以进行远程工作。我有丰富的远程协作经验，可以灵活安排时间。</p>
+          </div>
+          <div class="faq-item">
+            <h3><i class="fas fa-question-circle"></i> 如何获取技术支持？</h3>
+            <p>您可以通过邮件或社交媒体与我联系，我会尽快为您解答技术问题。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>关于小堇</h3>
+          <p>一个热爱技术、追求创新的全栈开发者。致力于创造优秀的用户体验和解决方案。</p>
+          <div class="footer-social">
+            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-weixin"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>快速链接</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="about.html">关于我</a></li>
+            <li><a href="skills.html">技能</a></li>
+            <li><a href="projects.html">项目</a></li>
+            <li><a href="blog.html">博客</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>联系方式</h3>
+          <ul class="footer-contact">
+            <li><i class="fas fa-envelope"></i> email@example.com</li>
+            <li><i class="fas fa-phone"></i> +86 123 4567 8900</li>
+            <li><i class="fas fa-map-marker-alt"></i> 中国，北京</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 小堇的个人网站. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/contact.js"></script>
+</body>
+
+</html>

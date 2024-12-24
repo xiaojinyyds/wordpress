@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>项目展示 - 小堇的个人网站</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/projects.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <div class="nav-brand">小堇的个人网站</div>
+    <div class="nav-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="about.html">关于我</a></li>
+      <li><a href="skills.html">技能</a></li>
+      <li><a href="projects.html" class="active">项目</a></li>
+      <li><a href="blog.html">博客</a></li>
+      <li><a href="contact.html">联系我</a></li>
+    </ul>
+  </nav>
+
+  <!-- 项目展示头部 -->
+  <header class="projects-header">
+    <div class="header-content">
+      <h1 class="glitch" data-text="我的项目">我的项目</h1>
+      <p class="subtitle">探索我的创意世界</p>
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">全部</button>
+        <button class="filter-btn" data-filter="web">Web应用</button>
+        <button class="filter-btn" data-filter="mobile">移动应用</button>
+        <button class="filter-btn" data-filter="design">UI设计</button>
+      </div>
+    </div>
+    <div class="header-background">
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+    </div>
+  </header>
+
+  <main class="projects-content">
+    <div class="container">
+      <div class="projects-grid">
+        <!-- 项目卡片 1 -->
+        <div class="project-card" data-category="web" data-aos="fade-up">
+          <div class="project-image">
+            <img src="images/home.png" alt="智能家居控制系统">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+                <a href="#" class="project-github"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>智能家居控制系统</h3>
+            <p>基于React的现代化智能家居控制面板，支持多设备管理和场景联动。</p>
+            <div class="project-tags">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>WebSocket</span>
+            </div>
+            <button class="project-details-btn" onclick="showProjectDetails(1)">
+              查看详情
+            </button>
+          </div>
+        </div>
+
+        <!-- 项目卡片 2 -->
+        <div class="project-card" data-category="mobile" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-image">
+            <img src="images/health.png" alt="健康追踪App">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+                <a href="#" class="project-github"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>健康追踪App</h3>
+            <p>一款集运动记录、饮食管理、睡眠监测于一体的健康管理应用。</p>
+            <div class="project-tags">
+              <span>Flutter</span>
+              <span>Firebase</span>
+              <span>健康Kit</span>
+            </div>
+            <button class="project-details-btn" onclick="showProjectDetails(2)">
+              查看详情
+            </button>
+          </div>
+        </div>
+
+        <!-- 项目卡片 3 -->
+        <div class="project-card" data-category="design" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-image">
+            <img src="images/UI.jpg" alt="现代化UI设计">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+                <a href="#" class="project-github"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>现代化UI设计系统</h3>
+            <p>为企业级应用打造的现代化UI设计系统，包含完整的组件库和设计规范。</p>
+            <div class="project-tags">
+              <span>Figma</span>
+              <span>Design System</span>
+              <span>UI/UX</span>
+            </div>
+            <button class="project-details-btn" onclick="showProjectDetails(3)">
+              查看详情
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- 项目详情模态框 -->
+  <div class="project-modal" id="projectModal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div class="modal-body">
+        <div class="project-gallery">
+          <div class="gallery-main">
+            <img src="" alt="项目大图">
+          </div>
+          <div class="gallery-thumbs">
+            <img src="" alt="缩略图1">
+            <img src="" alt="缩略图2">
+            <img src="" alt="缩略图3">
+          </div>
+        </div>
+        <div class="project-details">
+          <h2></h2>
+          <div class="project-meta">
+            <span class="project-date"></span>
+            <span class="project-client"></span>
+          </div>
+          <div class="project-description"></div>
+          <div class="project-features">
+            <h3>主要功能</h3>
+            <ul></ul>
+          </div>
+          <div class="project-tech">
+            <h3>技术栈</h3>
+            <div class="tech-tags"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>关于小堇</h3>
+          <p>一个热爱技术、追求创新的全栈开发者。致力于创造优秀的用户体验和解决方案。</p>
+          <div class="footer-social">
+            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-weixin"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>快速链接</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="about.html">关于我</a></li>
+            <li><a href="skills.html">技能</a></li>
+            <li><a href="projects.html">项目</a></li>
+            <li><a href="blog.html">博客</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>联系方式</h3>
+          <ul class="footer-contact">
+            <li><i class="fas fa-envelope"></i> email@example.com</li>
+            <li><i class="fas fa-phone"></i> +86 123 4567 8900</li>
+            <li><i class="fas fa-map-marker-alt"></i> 中国，北京</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 小堇的个人网站. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/projects.js"></script>
+</body>
+
+</html>

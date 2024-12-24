@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小堇的个人网站 - 全栈开发学习者</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">小堇的个人网站</div>
+    <div class="nav-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="active">首页</a></li>
+      <li><a href="about.html">关于我</a></li>
+      <li><a href="skills.html">技能</a></li>
+      <li><a href="projects.html">项目</a></li>
+      <li><a href="blog.html">博客</a></li>
+      <li><a href="contact.html">联系我</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero-section">
+    <div class="hero-content">
+      <div class="hero-text" data-aos="fade-right">
+        <h1>你好，我是小堇</h1>
+        <p class="subtitle">大二在读 · 全栈开发学习者 · 技术探索者</p>
+        <p class="description">
+          正在计算机科学与技术专业学习，热爱编程，专注于Web全栈开发。
+          致力于将创意转化为现实的代码实现。
+        </p>
+        <div class="hero-buttons">
+          <a href="#about" class="primary-btn">了解更多</a>
+          <a href="projects.html" class="secondary-btn">查看项目</a>
+        </div>
+      </div>
+      <div class="hero-image" data-aos="fade-left">
+        <img src="images/profile.jpg" alt="个人照片">
+      </div>
+    </div>
+  </header>
+
+  <section id="about" class="about-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">关于我</h2>
+      <div class="about-content">
+        <div class="about-text" data-aos="fade-right">
+          <p>我是一名大二在校生，主修计算机科学与技术。在校期间，我积极参与各类技术学习和项目实践，努力提升自己的专业能力。</p>
+          <ul class="about-points">
+            <li><i class="fas fa-graduation-cap"></i> 就读于XX大学计算机科学与技术专业</li>
+            <li><i class="fas fa-code"></i> 自学前端开发一年，后端开发半年</li>
+            <li><i class="fas fa-trophy"></i> 参与过校级科技创新项目</li>
+            <li><i class="fas fa-users"></i> 校内程序设计协会成员</li>
+          </ul>
+        </div>
+        <div class="about-stats" data-aos="fade-left">
+          <div class="stat-item">
+            <span class="stat-number">5+</span>
+            <span class="stat-label">个人项目</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">3+</span>
+            <span class="stat-label">技术领域</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">学习时长</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">技术栈</h2>
+      <div class="skills-content">
+        <div class="skill-category" data-aos="fade-up">
+          <h3><i class="fas fa-laptop-code"></i> 前端开发</h3>
+          <div class="skill-items">
+            <div class="skill-item">
+              <span>HTML5/CSS3</span>
+              <div class="progress-bar">
+                <div class="progress" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span>JavaScript</span>
+              <div class="progress-bar">
+                <div class="progress" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span>Vue.js</span>
+              <div class="progress-bar">
+                <div class="progress" style="width: 75%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+          <h3><i class="fas fa-server"></i> 后端开发</h3>
+          <div class="skill-items">
+            <div class="skill-item">
+              <span>Node.js</span>
+              <div class="progress-bar">
+                <div class="progress" style="width: 70%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span>Express</span>
+              <div class="progress-bar">
+                <div class="progress" style="width: 65%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span>MySQL</span>
+              <div class="progress-bar">
+                <div class="progress" style="width: 60%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="journey-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">学习历程</h2>
+      <div class="timeline">
+        <div class="timeline-item" data-aos="fade-right">
+          <div class="timeline-content">
+            <h3>2023年9月</h3>
+            <p>开始系统学习后端开发，接触Node.js和数据库</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-left">
+          <div class="timeline-content">
+            <h3>2023年3月</h3>
+            <p>完成第一个完整的前端项目，掌握Vue.js框架</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-right">
+          <div class="timeline-content">
+            <h3>2022年9月</h3>
+            <p>开始自学Web前端开发，学习HTML、CSS和JavaScript基础</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="goals-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">未来目标</h2>
+      <div class="goals-grid">
+        <div class="goal-item" data-aos="fade-up">
+          <i class="fas fa-rocket"></i>
+          <h3>技术提升</h3>
+          <p>深入学习前端框架和后端架构，掌握更多全栈开发技能</p>
+        </div>
+        <div class="goal-item" data-aos="fade-up" data-aos-delay="100">
+          <i class="fas fa-project-diagram"></i>
+          <h3>项目经验</h3>
+          <p>参与更多实际项目，积累项目开发和团队协作经验</p>
+        </div>
+        <div class="goal-item" data-aos="fade-up" data-aos-delay="200">
+          <i class="fas fa-graduation-cap"></i>
+          <h3>继续深造</h3>
+          <p>保持学习热情，为未来深造和职业发展打好基础</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>关于小堇</h3>
+          <p>一个热爱技术、追求创新的全栈开发者。致力于创造优秀的用户体验和解决方案。</p>
+          <div class="footer-social">
+            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-weixin"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>快速链接</h3>
+          <ul class="footer-links">
+            <li><a href="#home">首页</a></li>
+            <li><a href="#about">关于我</a></li>
+            <li><a href="#skills">技能</a></li>
+            <li><a href="#projects">项目</a></li>
+            <li><a href="#blog">博客</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>联系方式</h3>
+          <ul class="footer-contact">
+            <li><i class="fas fa-envelope"></i> email@example.com</li>
+            <li><i class="fas fa-phone"></i> +86 123 4567 8900</li>
+            <li><i class="fas fa-map-marker-alt"></i> 中国，北京</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 小堇的个人网站. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
