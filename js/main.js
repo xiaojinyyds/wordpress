@@ -1,16 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // 检查登录状态
+    if (!localStorage.getItem('isLoggedIn')) {
+        window.location.href = 'register.html';
+        return;
+    }
+
     // 初始化 AOS
     AOS.init({
         duration: 1000,
         once: true
-    });
-
-    // 导航栏切换
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
     });
 
     // 滚动到顶部按钮

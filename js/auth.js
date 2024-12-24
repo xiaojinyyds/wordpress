@@ -1,53 +1,82 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // 密码显示切换
-    const togglePassword = document.querySelectorAll('.toggle-password');
-    togglePassword.forEach(button => {
-        button.addEventListener('click', function() {
-            const input = this.previousElementSibling;
-            if (input.type === 'password') {
-                input.type = 'text';
-                this.classList.remove('fa-eye-slash');
-                this.classList.add('fa-eye');
-            } else {
-                input.type = 'password';
-                this.classList.remove('fa-eye');
-                this.classList.add('fa-eye-slash');
-            }
-        });
+    const loginTab = document.getElementById('loginTab');
+    const registerTab = document.getElementById('registerTab');
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+
+    // 切换表单
+    loginTab.addEventListener('click', () => {
+        loginTab.classList.add('active');
+        registerTab.classList.remove('active');
+        loginForm.style.display = 'flex';
+        registerForm.style.display = 'none';
     });
 
-    // 表单提交动画
-    const authForm = document.querySelector('.auth-form');
-    const authButton = document.querySelector('.auth-button');
+    registerTab.addEventListener('click', () => {
+        registerTab.classList.add('active');
+        loginTab.classList.remove('active');
+        registerForm.style.display = 'flex';
+        loginForm.style.display = 'none';
+    });
 
-    authForm.addEventListener('submit', function(e) {
+    // 登录表单提交
+    loginForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        authButton.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i>';
-        authButton.disabled = true;
+        const username = this.username.value;
+        const password = this.password.value;
+        const remember = this.remember.checked;
 
-        // 模拟提交延迟
-        setTimeout(() => {
-            authButton.innerHTML = '登录成功！';
-            authButton.style.backgroundColor = '#10B981';
-            
-            // 模拟重定向
-            setTimeout(() => {
-                window.location.href = 'index.html';
-            }, 1000);
-        }, 2000);
-    });
-
-    // 添加输入框焦点效果
-    const inputGroups = document.querySelectorAll('.input-group');
-    inputGroups.forEach(group => {
-        const input = group.querySelector('input');
-        input.addEventListener('focus', () => {
-            group.classList.add('focused');
-        });
-        input.addEventListener('blur', () => {
-            if (!input.value) {
-                group.classList.remove('focused');
+        // 这里添加登录验证逻辑
+        if (checkLogin(username, password)) {
+            localStorage.setItem('isLoggedIn', 'true');
+            if (remember) {
+                localStorage.setItem('username', username);
             }
-        });
+            window.location.href = 'index.html';
+        } else {
+            alert('用户名或密码错误！');
+        }
     });
-}); 
+
+    // 注册表单提交
+    registerForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const username = this.username.value;
+        const email = this.email.value;
+        const password = this.password.value;
+        const confirmPassword = this.confirm_password.value;
+
+        if (password !== confirmPassword) {
+            alert('两次输入的密码不一致！');
+            return;
+        }
+
+        // 这里添加注册逻辑
+        if (registerUser(username, email, password)) {
+            alert('注册成功！请登录');
+            loginTab.click();
+        } else {
+            alert('注册失败，用户名可能已存在');
+        }
+    });
+});
+
+// 检查登录状态
+function checkLogin(username, password) {
+    // 这里应该是后端验证，现在用模拟数据
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    return users.some(user => user.username === username && user.password === password);
+}
+
+// 注册用户
+function registerUser(username, email, password) {
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    
+    if (users.some(user => user.username === username)) {
+        return false;
+    }
+
+    users.push({ username, email, password });
+    localStorage.setItem('users', JSON.stringify(users));
+    return true;
+} 
